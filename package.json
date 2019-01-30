@@ -21,8 +21,17 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@nicky-lenaers/ngx-scroll-to": "^1.1.1",
+    "angular-typed": "0.0.3",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "cookie-parser": "^1.4.3",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
+    "morgan": "^1.9.1",
     "rxjs": "~6.2.0",
+    "typed.js": "^2.0.9",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

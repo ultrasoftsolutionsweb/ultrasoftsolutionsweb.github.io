@@ -8,15 +8,15 @@ import Typed from 'typed.js';
   styleUrls: ['./intro-banner.component.css']
 })
 export class IntroBannerComponent implements OnInit {
-  title = "Cognitive Intelligent Solutions made simple!";
+  title = 'Cognitive Intelligent Solutions made simple!';
   constructor() { }
 
   ngOnInit() {
-    var titles = {
-      strings: ["Cognitive Intelligent Solutions made simple"],
+    const titles = {
+      strings: ['Cognitive Intelligent Solutions made simple'],
       typeSpeed: 40
     }
-    
+  }  
 
   
   let titled = new Typed('.title',titles);

@@ -8,20 +8,20 @@ import Typed from 'typed.js';
   styleUrls: ['./intro-banner.component.css']
 })
 export class IntroBannerComponent implements OnInit {
-  title = 'Cognitive Intelligent Solutions made simple!';
+  title = 'Cognitive Solution for all !';
   constructor() { }
 
   ngOnInit() {
-    const titles = {
+    var titles = {
       strings: ['Cognitive Intelligent Solutions made simple'],
       typeSpeed: 40
     }
-  }  
+    
 
   
   let titled = new Typed('.title',titles);
   let options = {
-    strings: ["^3000 #ArtificialIntelligence", "#MachineLearning", "#Cloud", "#DigitalTransformation","#Blockchain","#CognitiveSolutions"],
+    strings: ["^3000 #ArtificialIntelligence.", "#MachineLearning.", "#DigitialTransformation", "#automation","#Cloud.","#BlockChain.","#CognitiveSolutions"],
     typeSpeed: 50,
     backSpeed: 50,
     showCursor: false,

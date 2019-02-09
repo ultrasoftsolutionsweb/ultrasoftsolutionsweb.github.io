@@ -16,12 +16,12 @@ export class IntroBannerComponent implements OnInit {
       strings: ['Cognitive Intelligent Solutions made simple'],
       typeSpeed: 40
     }
-    
 
-  
+
+
   let titled = new Typed('.title',titles);
   let options = {
-    strings: ["^3000 #ArtificialIntelligence.", "#MachineLearning.", "#DigitialTransformation", "#automation","#Cloud.","#BlockChain.","#CognitiveSolutions"],
+    strings: ["^3000 #ArtificialIntelligence", "#MachineLearning", "#DigitialTransformation", "#Automation","#Cloud","#Blockchain"],
     typeSpeed: 50,
     backSpeed: 50,
     showCursor: false,
@@ -30,7 +30,5 @@ export class IntroBannerComponent implements OnInit {
   }
   let typed = new Typed(".typing-element", options);
 }
-    
-}
-    
 
+}

@@ -6,7 +6,7 @@ RUN yarn global add @angular/cli@1.2.6
 WORKDIR /app
 COPY package.json /app
 COPY . /app
-RUN npm install  && $(npm bin)/ng build --prod
+RUN npm install --silent && $(npm bin)/ng build --prod
 
 
 # create watch files

@@ -1,27 +1,41 @@
-name: CD - Continous Deployment 
+name: CD-Deploy to Amazon ECS
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'dev'
 
-jobs:
-  build:
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Build 
-      env: 
-        DOCKER_HUB: "Docker username "
-        DOCKER_KEY: "Docker Repo password "
-      run: |
-        ls -l
-        echo "Logging into Docker"
-        echo "Logged in success"
-        echo "Running the build"
-        docker build -t ultrasoft/angular .
-        echo 'pushing image..'
-        echo "docker image build and pushed"
+      jobs:
+        deploy:
+          name: Deploy to beta
+          runs-on: ubuntu-latest
+      
+          steps:
+          - name: Checkout
+            uses: actions/checkout@v1
+      
+          - name: Configure AWS credentials
+            uses: aws-actions/configure-aws-credentials@v1
+            with:
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws-region: us-east-1
+      
+          - name: Login to Amazon ECR
+            id: login-ecr
+            uses: aws-actions/amazon-ecr-login@v1
+      
+          - name: Build, tag, and push image to Amazon ECR
+            id: build-image
+            env:
+              ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+              ECR_REPOSITORY: involve-ai-python-flask-app-beta
+              IMAGE_TAG: ${{ github.sha }}
+            run: |
+              # Build a docker container and
+              # push it to ECR so that it can
+              # be deployed to ECS.
+              docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+              docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+              echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
    

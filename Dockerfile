@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:latest
 
 # set up angular cli
 RUN yarn global add @angular/cli@1.2.6

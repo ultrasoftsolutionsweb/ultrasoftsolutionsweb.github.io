@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:401913127629:task-definition/ultrasoft-website:3",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:401913127629:task-definition/ultrasoft-website:latest",
     "containerDefinitions": [
         {
             "name": "website",
-            "image": "401913127629.dkr.ecr.us-east-1.amazonaws.com/ultrasoft/website",
+            "image": "401913127629.dkr.ecr.us-east-1.amazonaws.com/ultrasoft/website:v_%BUILD_NUMBER",
             "cpu": 0,
             "memoryReservation": 128,
             "portMappings": [

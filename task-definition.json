@@ -3,6 +3,7 @@
     "containerDefinitions": [
         {
             "name": "website",
+            "image": "401913127629.dkr.ecr.us-east-1.amazonaws.com/ultrasoft/website:latest",
             "cpu": 2048,
             "memory": 4096,
             "portMappings": [

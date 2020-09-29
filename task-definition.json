@@ -3,9 +3,8 @@
     "containerDefinitions": [
         {
             "name": "website",
-            "image": "401913127629.dkr.ecr.us-east-1.amazonaws.com/ultrasoft/website:v_%BUILD_NUMBER",
-            "cpu": 0,
-            "memoryReservation": 128,
+            "cpu": 2048,
+            "memory": 4096,
             "portMappings": [
                 {
                     "containerPort": 4200,
@@ -76,6 +75,6 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "1024",
-    "memory": "2048"
+    "cpu": "2048",
+    "memory": "4096"
 }

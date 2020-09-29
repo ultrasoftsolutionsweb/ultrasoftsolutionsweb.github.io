@@ -1,5 +1,7 @@
 FROM node:latest as build
 
+LABEL MAINTAINER ultrasoft 'info@ultrasoft.com'
+
 # set up angular cli
 RUN yarn global add @angular/cli@1.2.6
 

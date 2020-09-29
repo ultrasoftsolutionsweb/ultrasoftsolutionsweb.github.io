@@ -38,9 +38,11 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"- name: Image Details
-        id: imagebetadetais
-        run: |
-          echo "Image tag is ${{ github.sha }} and image is ${{ steps.build-image.outputs.image }}"
+      
+    - name: Image Details
+      id: imagebetadetais
+      run: |
+        echo "Image tag is ${{ github.sha }} and image is ${{ steps.build-image.outputs.image }}"
 
     - name: Updating the new image ID in the Amazon ECS task definition
       id: task-def
